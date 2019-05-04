@@ -96,4 +96,13 @@ class UserTest extends TestCase
 
         $user->notify('Hello');
     }
+
+    public function testNotifyReturnTrue()
+    {
+        $user = new User('roberto@test.it');
+
+        $this->expectException(InvalidArgumentException::class);
+
+        $this->assertTrue($user->notifyNew('Hello!'));
+    }
 }

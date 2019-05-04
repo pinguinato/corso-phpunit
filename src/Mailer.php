@@ -14,4 +14,21 @@ class Mailer
 
         return true;
     }
+
+    /**
+     * @param $mail
+     * @param $message
+     * @throws InvalidArgumentException
+     * @return bool
+     */
+    public static function sendStatic($mail, $message)
+    {
+        if(empty($email)){
+            throw new InvalidArgumentException;
+        }
+
+        echo "Send '$message' to $mail";
+
+        return true;
+    }
 }

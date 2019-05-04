@@ -44,9 +44,15 @@ class User
     /**
      * @param $message
      * @return bool
+     * @throws Exception
      */
     public function notify($message)
     {
         return $this->mailer->sendMessage($this->email, $message);
+    }
+
+    public function notifyNew($message)
+    {
+        return Mailer::sendStatic($this->email, $message);
     }
 }
